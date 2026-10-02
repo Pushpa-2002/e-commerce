@@ -6,6 +6,7 @@ export async function apiFetch<T>(
 ): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
     ...options,
+    cache: 'no-store',
     headers: {
       "Content-Type": "application/json",
       ...options.headers,
