@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand */
+  --color-brand: var(--color-violet-500);
+  --color-brand-hover: var(--color-violet-600);
+  --color-brand-soft: var(--color-violet-100);
+  --color-brand-tint: var(--color-violet-50);
+  --color-brand-ink: var(--color-violet-800);
+  --color-brand-line: var(--color-violet-200);
+
+  /* Surfaces */
+  --color-canvas: var(--color-zinc-50);
+  --color-surface: white;
+  --color-surface-alt: var(--color-zinc-100);
+
+  /* Text */
+  --color-ink: var(--color-zinc-900);
+  --color-ink-soft: var(--color-zinc-600);
+  --color-ink-muted: var(--color-zinc-500);
+  --color-ink-faint: var(--color-zinc-400);
+
+  /* Borders */
+  --color-line: var(--color-zinc-200);
+  --color-line-soft: var(--color-zinc-100);
+
+  /* Feedback */
+  --color-success: var(--color-emerald-600);
+  --color-success-soft: var(--color-emerald-50);
+  --color-danger: var(--color-red-600);
+  --color-danger-soft: var(--color-red-50);
+  --color-warning: var(--color-amber-600);
+  --color-warning-soft: var(--color-amber-50);
+
+  --color-star: var(--color-amber-500);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ---------- BASE ---------- */
+html,
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+::selection {
+  background-color: var(--color-brand-soft);
+  color: var(--color-brand-ink);
 }
