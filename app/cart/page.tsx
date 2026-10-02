@@ -286,6 +286,7 @@ function CartSkeleton() {
             </div>
           ))}
         </div>
+
         <div className="h-64 rounded-2xl border border-zinc-100 bg-white" />
       </div>
     </div>
