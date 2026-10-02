@@ -4,8 +4,6 @@ import { fetchProducts } from "@/lib/productApi";
 const BASE_URL = "https://your-domain.com";   // ← replace after deploy
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const products = await fetchProducts();
-
     const staticRoutes: MetadataRoute.Sitemap = [
         {
             url: `${BASE_URL}/`,
@@ -21,12 +19,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
     ];
 
-    const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
-        url: `${BASE_URL}/products/${p.id}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.7,
-    }));
+    try {
+        const products = await fetchProducts();
 
-    return [...staticRoutes, ...productRoutes];
+        const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
+            url: `${BASE_URL}/products/${p.id}`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.7,
+        }));
+
+        return [...staticRoutes, ...productRoutes];
+    } catch (error) {
+        return staticRoutes;
+    }
 }
