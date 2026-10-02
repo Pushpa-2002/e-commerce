@@ -19,7 +19,7 @@ import ProductCard from "@/components/products/ProductCard";
 interface PageProps {
   params: Promise<{ id: string }>;
 }
-
+export const dynamic = "force-dynamic";
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
