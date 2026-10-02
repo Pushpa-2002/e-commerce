@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { fetchProducts } from "@/lib/productApi";
 
-const BASE_URL = "https://your-domain.com";   // ← replace after deploy
-
+const BASE_URL = "https://e-commerce-gdxv.vercel.app";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const staticRoutes: MetadataRoute.Sitemap = [
         {
