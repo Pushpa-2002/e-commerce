@@ -295,7 +295,7 @@ function CartSkeleton() {
 function EmptyCart() {
   return (
     <div className="mx-auto max-w-md px-4 py-24 text-center">
-      <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-orange-100 to-amber-50 ring-1 ring-orange-200/50">
+      <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-linear-to-br from-orange-100 to-amber-50 ring-1 ring-orange-200/50">
         <svg
           className="h-11 w-11 text-orange-500"
           fill="none"

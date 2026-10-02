@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MiniCart from "@/components/cart/MiniCart";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: { default: "Shop", template: "%s | Shop" },
   description: "E-commerce store built with Next.js",
