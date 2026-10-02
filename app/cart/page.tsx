@@ -12,7 +12,7 @@ import {
 import { fetchProducts } from "@/lib/productApi";
 import type { Product } from "@/lib/api/types";
 import ProtectedRoute from "@/components/layout/ProtectedRoute";
-
+export const dynamic = "force-dynamic";
 export default function CartPage() {
   const dispatch = useDispatch();
 

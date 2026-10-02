@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { login } from "@/lib/redux/slices/authSlice";
 import { apiFetch } from "@/lib/api/api";
-
+export const dynamic = "force-dynamic";
 export default function LoginPage() {
   const router = useRouter();
   const dispatch = useDispatch();
